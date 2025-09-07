@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perostino Gois – Charutos Artesanais</title>
+  <meta name="description" content="Perostino Gois – charutos artesanais. Compre pelo WhatsApp, participe do sorteio e fale com o suporte." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <h1>Perostino Gois</h1>
+      </div>
+      <nav class="nav-links">
+        <a href="#produtos">Produtos</a>
+        <a href="#pagamentos">Pagamentos</a>
+        <a href="#sorteio">Sorteio</a>
+        <a href="#suporte">Suporte</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-wrap">
+        <video autoplay muted loop playsinline class="bg-video">
+      <source src="assets/3D do produto 16-9.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos em HTML5.
+    </video>
+        <div>
+          <div class="kicker">Edição limitada</div>
+          <h2>Charutos artesanais com assinatura Perostino Gois</h2>
+          <p>Qualidade, tradição e uma experiência robusta. Faça seu pedido diretamente pelo WhatsApp em segundos.</p>
+          <div class="row">
+            <a class="btn whatsapp-btn" data-message="Olá! Quero comprar a Edição Real (1 unidade)." href="#">Comprar agora</a>
+            <a class="btn ghost" href="#produtos">Ver produtos</a>
+          </div>
+        </div>
+        <div class="card">
+          <span class="tag">Edição Real, só para a Realeza</span>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;margin-top:12px">
+            <div>
+              <h4 style="margin:0 0 6px">Notas</h4>
+              <p class="muted" style="margin:0">Torra média, couro, especiarias suaves. Queima uniforme.</p>
+              <div class="row" style="margin-top:12px">
+                <div class="qty">
+                  <label for="hero-qty" class="muted" style="font-size:13px">Qtd.</label>
+                  <input id="hero-qty" type="number" min="1" value="1" />
+                </div>
+                <a class="btn small whatsapp-btn" data-bind-qty="#hero-qty" data-message="Olá! Quero comprar a Edição Real (QTD unidades).">Pedir por WhatsApp</a>
+              </div>
+            </div>
+            <div class="thumb" style="height:160px">
+              <img src="assets/edicao-real.jpg" alt="Caixa Edição Real Perostino Gois" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos">
+      <div class="container">
+        <h3 class="section-title">Produtos</h3>
+        <p class="section-sub">Escolha o seu e finalize pelo WhatsApp.</p>
+        <div class="grid cols-3">
+          <!-- Produto 1 -->
+          <article class="card product-card">
+            <div class="product-top">
+              <div class="thumb"><img src="assets/edicaoReal.jpg" alt="Edição Real" onerror="this.style.display='none'"></div>
+              <div>
+                <div class="product-name">Edição Real</div>
+                <div class="muted">Formato Robusto • Fortaleza média</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="qty">
+                <label class="muted" for="q-real">Qtd.</label>
+                <input id="q-real" type="number" min="1" value="1">
+              </div>
+              <a class="btn small whatsapp-btn" data-bind-qty="#q-real" data-message="Olá! Quero comprar a Edição Real (QTD unidades).">Comprar pelo WhatsApp</a>
+            </div>
+          </article>
+
+          <!-- Produto 2 -->
+          <article class="card product-card">
+            <div class="product-top">
+              <div class="thumb"><img src="assets/kitRobusto.png" alt="Kit Robusto" onerror="this.style.display='none'"></div>
+              <div>
+                <div class="product-name">Kit Robusto</div>
+                <div class="muted">Combo promocional somente por sorteio</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="qty">
+                <label class="muted" for="q-kit">Qtd.</label>
+                <input id="q-kit" type="number" min="1" value="1">
+              </div>
+              <a class="btn small whatsapp-btn" data-bind-qty="#q-kit" data-message="Olá! Quero 1 Kit Robusto (QTD kits).">Comprar pelo WhatsApp</a>
+            </div>
+          </article>
+
+          <!-- Produto 3 -->
+          <article class="card product-card">
+            <div class="product-top">
+              <div class="thumb"><img src="assets/acessorios.jpg" alt="Acessórios" onerror="this.style.display='none'"></div>
+              <div>
+                <div class="product-name">Acessórios</div>
+                <div class="muted">Corta-charuto • Isqueiro</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="qty">
+                <label class="muted" for="q-acc">Qtd.</label>
+                <input id="q-acc" type="number" min="1" value="1">
+              </div>
+              <a class="btn small whatsapp-btn" data-bind-qty="#q-acc" data-message="Olá! Quero acessórios (QTD itens). Pode enviar opções e preços?">Falar no WhatsApp</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGAMENTOS -->
+    <section id="pagamentos">
+      <div class="container">
+        <h3 class="section-title">Pagamentos aceitos</h3>
+        <p class="section-sub">Atendimento vip pelo WhatsApp. Também aceitamos Pix, Revolut e Cripto.</p>
+        <div class="pay-list">
+          <div class="pay-item"><span>Revolut (EUR/USD)</span><a class="btn small whatsapp-btn" data-message="Olá! Quero pagar via Revolut. Pode enviar os dados?">Pedir dados no WhatsApp</a></div>
+          <div class="pay-item"><span>Pix (BRL)</span><a class="btn small whatsapp-btn" data-message="Olá! Quero pagar via Pix. Pode enviar a chave e o QR?">Pedir chave Pix</a></div>
+          <div class="pay-item"><span>Cripto: USDT (BEP20), SOL (Solana), BTC</span><a class="btn small whatsapp-btn" data-message="Olá! Quero pagar em cripto (USDT/SOL/BTC). Pode enviar carteira e QR?">Pedir carteira</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SORTEIO -->
+    <section id="sorteio">
+      <div class="container">
+        <div class="card raffle">
+          <div>
+            <span class="badge">Participação: 10 €</span>
+            <h3 style="margin:10px 0 8px">Sorteio • Kit Robusto</h3>
+            <p class="muted" style="margin:0 0 14px">Entre no sorteio oficial do Kit Robusto. Envie o comprovativo pelo WhatsApp e receba o seu número de participação automaticamente.</p>
+            <div class="row">
+              <a class="btn whatsapp-btn" data-message="Olá! Quero participar do sorteio do Kit Robusto (10 €). Pode enviar as instruções?">Participar agora</a>
+              <a class="btn ghost whatsapp-btn" data-message="Olá! Tenho dúvidas sobre o sorteio do Kit Robusto.">Tirar dúvidas</a>
+            </div>
+          </div>
+          <div>
+            <div class="thumb" style="height:180px"><img src="assets/sorteio.jpg" alt="Sorteio Kit Robusto" onerror="this.style.display='none'"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPORTE -->
+    <section id="suporte">
+      <div class="container">
+        <h3 class="section-title">Suporte por WhatsApp</h3>
+        <p class="section-sub">Ficou alguma dúvida sobre compra, pagamento ou entrega? Fale connosco.</p>
+        <div class="row">
+          <a class="btn whatsapp-btn" data-message="Olá! Preciso de suporte.">Abrir conversa</a>
+          <a class="btn ghost" href="#">Voltar ao topo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Perostino Gois. Todos os direitos reservados.</div>
+      <div class="muted">Artesanal • Qualidade • Tradição</div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="wa-float">
+    <a class="wa-circle whatsapp-btn" aria-label="Falar no WhatsApp" data-message="Olá! Vim pelo site e quero informações.">WA</a>
+  </div>
+
+  <script>
+    // CONFIGURE AQUI O NÚMERO DO WHATSAPP (COM CÓDIGO DO PAÍS)
+    // Exemplo Portugal: 351XXXXXXXXX | Brasil: 55XXXXXXXXXXX
+    const WHATSAPP_NUMBER = "964794167"; // TODO: Substitua pelo número real (apenas dígitos)
+
+    function buildWaLink(msg){
+      const text = encodeURIComponent(msg);
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    }
+
+    function bindWhatsAppButtons(){
+      document.querySelectorAll('.whatsapp-btn').forEach(btn=>{
+        const baseMsg = btn.getAttribute('data-message') || 'Olá! Vim pelo site e quero mais informações.';
+        const qtySelector = btn.getAttribute('data-bind-qty');
+        let msg = baseMsg;
+        if(qtySelector){
+          const el = document.querySelector(qtySelector);
+          const q = Math.max(1, parseInt(el?.value || '1', 10));
+          msg = baseMsg.replace('QTD', q);
+          el?.addEventListener('change', ()=>{
+            btn.href = buildWaLink(baseMsg.replace('QTD', Math.max(1, parseInt(el.value||'1',10))));
+          });
+        }
+        btn.href = buildWaLink(msg);
+        btn.setAttribute('target','_blank');
+        btn.setAttribute('rel','noopener');
+      });
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    bindWhatsAppButtons();
+  </script>
+</body>
+</html>
