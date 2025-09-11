@@ -308,4 +308,15 @@
       .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
       .hero h2{font-size:32px}
     }
-  
+  .ranking-wrap{--bg:#111;--card:#1a1a1a;--acc:#e0b86b;--txt:#eee;--mut:#9aa;
+  background:var(--bg);border:1px solid #222;border-radius:14px;padding:16px}
+.ranking-title{margin:0 0 8px 0;color:var(--acc);font-size:1.25rem}
+.ranking-total{display:flex;gap:8px;align-items:center;color:var(--txt);
+  background:var(--card);border:1px solid #222;border-radius:10px;padding:10px;margin-bottom:12px}
+.ranking-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ranking-list li{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;
+  background:var(--card);border:1px solid #222;border-radius:12px;padding:10px}
+.pos{font-weight:700;color:var(--acc);width:2.5rem;text-align:center}
+.nome{color:var(--txt)}
+.qtd{color:var(--muted,#c9c9c9)}
+@media (max-width:600px){.ranking-list li{grid-template-columns:1fr;gap:4px}.pos{width:auto;text-align:left}}
