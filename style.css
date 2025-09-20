@@ -13,7 +13,10 @@
   --shadow: 0 10px 30px rgba(0,0,0,.35);
   --radius: 16px;
   --radius-lg: 20px;
-  --maxw: 1200px;
+  --maxw: 1100px;          /* largura total do conteúdo */
+  --gap: 20px;             /* espaçamento padrão entre itens */
+  --pad: 24px;             /* padding interno dos blocos */
+  --footer-h: 56px;        /* altura da barra fixa no mobile */
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -25,37 +28,60 @@ body{
     radial-gradient(1200px 800px at 10% 0%, rgba(255,255,255,.04), transparent 60%),
     radial-gradient(1000px 600px at 90% 100%, rgba(255,255,255,.04), transparent 60%),
     linear-gradient(180deg, var(--bg-wood), var(--bg));
+  overflow-x: hidden; /* evita quebra lateral */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* textura leve “madeira” */
 body:before{
   content:"";
   position: fixed; inset:0;
-  background:
-    repeating-linear-gradient(90deg,
-      rgba(0,0,0,.08) 0 1px,
-      transparent 1px 6px);
+  background: repeating-linear-gradient(90deg, rgba(0,0,0,.08) 0 1px, transparent 1px 6px);
   mix-blend-mode: soft-light;
-  opacity:.35;
-  pointer-events:none;
+  opacity:.35; pointer-events:none;
 }
 
+/* mídia nunca estoura a tela */
+img, video{ max-width:100%; height:auto; display:block }
+p,h1,h2,h3{ overflow-wrap:break-word }
+
 /* ===========================
-   Layout
+   Layout base
 =========================== */
 .container{
   width:100%;
   max-width: var(--maxw);
-  margin-inline:auto;
+  margin-inline: auto;
   padding: 24px;
 }
 
-.grid{
-  display:grid;
-  gap:24px;
+/* Empilha tudo com gap uniforme (principal no mobile) */
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap: var(--gap);
 }
 
+/* Bloco padrão com mesma largura, borda e padding */
+.content-block{
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  box-shadow: var(--shadow);
+  padding: var(--pad);
+}
+
+/* Se quiser remover borda/sombra em algum bloco específico */
+.content-block.is-plain{
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* Seções */
 .section{
-  padding: 48px 0;
+  padding: 36px 0;
   border-top: 1px solid var(--border);
 }
 
@@ -79,46 +105,26 @@ body:before{
 .nav a:hover{ color: var(--text) }
 
 /* ===========================
-   Hero com Vídeo
+   Hero + Vídeo
 =========================== */
-.hero{
-  position: relative;
-  isolation: isolate;
-  padding: 56px 0 36px;
-}
-
-.hero .bg-video{
-  display:block;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
+.hero{ padding: 40px 0 10px }
+.bg-video{
+  width:100%;
+  aspect-ratio: 16 / 9;   /* mantém proporção sem quebrar */
+  object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  object-fit: cover;
 }
 
 /* ===========================
-   Texto embaixo do Vídeo (Card)
+   Texto abaixo do vídeo (Card)
 =========================== */
-.video-text-card{
-  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
-  margin-top: 24px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.video-text-card h2{
+.video-text-card h2,
+.video-text-card h1{
   font-size: clamp(22px,3vw,28px);
   color: var(--accent-2);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
-
 .video-text-card p{
   color: var(--muted);
   line-height: 1.6;
@@ -135,20 +141,11 @@ p{ color: var(--muted); line-height: 1.6 }
 /* ===========================
    Cards (Ranking / Sorteio)
 =========================== */
-.card{
-  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow);
+.card .card-header{
+  display:flex; align-items:center; justify-content:space-between; margin-bottom: 12px;
 }
-
-.card-header{
-  display:flex; align-items:center; justify-content:space-between;
-  margin-bottom: 12px;
-}
-.card-title{ font-weight:700 }
-.card-sub{ color: var(--muted); font-size:.95rem }
+.card .card-title{ font-weight:700 }
+.card .card-sub{ color: var(--muted); font-size:.95rem }
 
 .badge{
   display:inline-block;
@@ -169,9 +166,7 @@ p{ color: var(--muted); line-height: 1.6 }
 .ranking-item .name{ font-weight:600 }
 .ranking-item .qty{ color: var(--accent-2) }
 
-.sorteio-info{
-  display:grid; gap:10px; margin-top:10px;
-}
+.sorteio-info{ display:grid; gap:10px; margin-top:10px; }
 .upload{
   border:1px dashed var(--border);
   border-radius:12px; padding:14px;
@@ -179,52 +174,22 @@ p{ color: var(--muted); line-height: 1.6 }
 }
 
 /* ===========================
-   Botões / Inputs
-=========================== */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  gap:8px;
-  padding:12px 16px;
-  border-radius: 12px;
-  border: 1px solid transparent;
-  background: linear-gradient(180deg, var(--accent), #b88f6c);
-  color: #27170c; font-weight:700;
-  cursor:pointer; text-decoration:none;
-  transition: transform .08s ease, filter .2s ease;
-}
-.btn:hover{ filter: brightness(1.05) }
-.btn:active{ transform: translateY(1px) }
-
-.btn-ghost{
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-.btn-ghost:hover{ border-color: var(--accent); color: var(--accent-2) }
-
-.input, .select, .textarea, .file{
-  width:100%;
-  background: #1f140d;
-  color:var(--text);
-  border:1px solid var(--border);
-  border-radius: 12px;
-  padding:12px 14px;
-  outline:none;
-}
-.input:focus, .select:focus, .textarea:focus, .file:focus{
-  border-color: var(--accent);
-}
-
-/* ===========================
    Galeria
 =========================== */
 .gallery{
-  display:grid; gap:16px;
+  display:grid; gap: var(--gap);
   grid-template-columns: repeat(3, 1fr);
 }
-.gallery img, .gallery video{
-  width:100%; height: 220px; object-fit: cover;
-  border-radius: 12px; border:1px solid var(--border);
+.gallery-item{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.gallery-item > *{
+  width:100%;
+  height: 220px;
+  object-fit: cover;
+  display:block;
 }
 
 /* ===========================
@@ -241,6 +206,65 @@ p{ color: var(--muted); line-height: 1.6 }
 .table tr:hover{ background: rgba(255,255,255,.02) }
 
 /* ===========================
+   Botões / Inputs
+=========================== */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:12px 16px;
+  border-radius: 12px; border: 1px solid transparent;
+  background: linear-gradient(180deg, var(--accent), #b88f6c);
+  color: #27170c; font-weight:700; cursor:pointer; text-decoration:none;
+  transition: transform .08s ease, filter .2s ease;
+  touch-action: manipulation;
+}
+.btn:hover{ filter: brightness(1.05) }
+.btn:active{ transform: translateY(1px) }
+
+.btn-ghost{
+  background: transparent; color: var(--text); border: 1px solid var(--border);
+}
+.btn-ghost:hover{ border-color: var(--accent); color: var(--accent-2) }
+
+.input, .select, .textarea, .file{
+  width:100%;
+  background: #1f140d; color:var(--text);
+  border:1px solid var(--border);
+  border-radius: 12px; padding:12px 14px; outline:none;
+}
+.input:focus, .select:focus, .textarea:focus, .file:focus{ border-color: var(--accent); }
+
+/* ===========================
+   Footer fixo (mobile) — WhatsApp / Instagram / Facebook
+=========================== */
+.footer-bar{
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  align-items: stretch;
+  height: var(--footer-h);
+  background: #1f140d;
+  border-top: 1px solid var(--border);
+  z-index: 200;
+}
+.footer-btn{
+  flex: 1;
+  display:flex; align-items:center; justify-content:center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 15px;
+  border-right: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  padding: 0 10px;
+}
+.footer-btn:last-child{ border-right: none }
+.footer-btn:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--accent-2);
+}
+
+/* ===========================
    Utilitários
 =========================== */
 .center{text-align:center}
@@ -252,36 +276,50 @@ p{ color: var(--muted); line-height: 1.6 }
 /* ===========================
    Responsividade
 =========================== */
-@media (max-width: 1024px){
-  .gallery{ grid-template-columns: repeat(2, 1fr) }
+/* Desktop/Large */
+@media (min-width: 1025px){
+  /* No desktop, a barra fixa não aparece */
+  .footer-bar{ display: none }
+
+  /* Grade de duas colunas para pares (Ranking/Sorteio etc.) */
+  .grid-2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    align-items: start;
+  }
 }
 
+/* Tablet e abaixo */
+@media (max-width: 1024px){
+  .container{ padding: 20px }
+  .gallery{ grid-template-columns: repeat(2, 1fr) }
+
+  /* espaço no final da página para a barra fixa não cobrir conteúdo */
+  body{
+    padding-bottom: calc(var(--footer-h) + env(safe-area-inset-bottom, 0px));
+  }
+  .footer-bar{
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px){
   .nav a{ margin-left:10px }
-  .hero{ padding: 36px 0 24px }
+  .hero{ padding: 28px 0 8px }
 
-  /* Empilhar Ranking e Sorteio no mobile */
-  .grid-cols-2{ grid-template-columns: 1fr; }
-
-  .hero .bg-video{ max-width: 100%; }
+  /* Tipografia do card de texto sob o vídeo */
+  .video-text-card h1, .video-text-card h2{ font-size: 20px; margin-bottom: 8px; }
+  .video-text-card p{ font-size: 15px; line-height: 1.5; }
 
   .gallery{ grid-template-columns: 1fr }
-
-  /* Ajuste do card de texto no mobile */
-  .video-text-card{
-    max-width: 100%;
-    margin: 16px auto;
-    padding: 20px 16px;
-    text-align: left;
-  }
-
-  .video-text-card h2{ font-size: 20px; margin-bottom: 8px; }
-  .video-text-card p{ font-size: 15px; line-height: 1.5; }
+  .btn{ width:100% }
 }
 
+/* Phones pequenos */
 @media (max-width: 480px){
-  .container{ padding:16px }
+  .container{ padding: 16px }
   h1{ font-size: 28px }
   h2{ font-size: 22px }
-  .btn{ width:100% }
 }

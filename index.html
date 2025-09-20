@@ -1,252 +1,130 @@
 <!doctype html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Perostino Gois – Charutos Artesanais</title>
-  <meta name="description" content="Perostino Gois – charutos artesanais. Compre pelo WhatsApp, participe do sorteio e fale com o suporte." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-
+  <title>Perostino Gois — Edição Limitada</title>
+  <meta name="description" content="Charutos artesanais Perostino Gois. Qualidade, tradição e uma experiência robusta. Edição limitada, produção artesanal e autenticamente cubana." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+  <!-- Header -->
+  <header class="header">
     <div class="container nav">
-      <div class="brand">
-        <div class="brand-logo" aria-hidden="true"></div>
-        <h1>Perostino Gois</h1>
-      </div>
-      <nav class="nav-links">
+      <div class="logo">Perostino Gois</div>
+      <nav>
+        <a href="#pedido">Pedido</a>
+        <a href="#edicao-limitada">Edição Limitada</a>
+        <a href="#ranking">Ranking</a>
         <a href="#produtos">Produtos</a>
-        <a href="#pagamentos">Pagamentos</a>
-        <a href="#sorteio">Sorteio</a>
-        <a href="#suporte">Suporte</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-wrap">
-        <video autoplay muted loop playsinline class="bg-video">
-      <source src="assets/3D do produto 16-9.mp4" type="video/mp4">
-      Seu navegador não suporta vídeos em HTML5.
-    </video>
-        <div>
-          <div class="kicker">Edição limitada</div>
-          <h2>Charutos artesanais com assinatura Perostino Gois</h2>
-          Qualidade, tradição e uma experiência robusta. Faça seu pedido diretamente pelo WhatsApp em segundos.
-           mais do que um charuto. 
-          Uma experiência única.
-          Perostino Gois é a essência preservada do verdadeiro charuto cubano.
-Uma marca que mantém viva a cultura, a tradição e a originalidade da ilha, nascida do solo cubano e cultivada pelas mãos de mestres artesãos que herdaram gerações de conhecimento.
-Cada unidade é produzida exclusivamente em Cuba, sem parcerias externas, sem indústrias estrangeiras, sem concessões. Isso garante não apenas a mais alta qualidade, mas também a impossibilidade de falsificação – pois o Perostino Gois não pode ser fabricado fora da sua terra de origem.
-Dessa forma, a marca não só supera os padrões das casas de charuto mais lendárias, mas também se consolida como símbolo absoluto de autenticidade, exclusividade e excelência.
-Perostino Gois não é apenas um charuto. É um patrimônio cubano, legítimo e intocável.
+    <section class="container section">
+      <div class="stack">
+        <!-- VÍDEO -->
+        <div class="content-block is-plain">
+          <video class="bg-video" autoplay muted loop playsinline>
+            <source src="assets/3D do produto 16-9.mp4" type="video/mp4" />
+          </video>
+        </div>
 
+        <!-- TEXTO -->
+        <div id="edicao-limitada" class="content-block video-text-card">
+          <h1>Edição limitada</h1>
+          <p><strong>Charutos artesanais com assinatura Perostino Gois</strong></p>
+          <p>Qualidade, tradição e uma experiência robusta. Faça seu pedido diretamente pelo WhatsApp em segundos.</p>
+          <p><em>Mais do que um charuto. Uma experiência única.</em></p>
 
----
+          <p>Perostino Gois é a essência preservada do verdadeiro charuto cubano. Uma marca que mantém viva a cultura, a tradição e a originalidade da ilha, nascida do solo cubano e cultivada pelas mãos de mestres artesãos que herdaram gerações de conhecimento.</p>
 
-📜 Declaração Exclusiva:
-Cada charuto e cada caixa de Perostino Gois são montados, numerados e selados individualmente conforme o pedido de cada cliente.
-Não existe reserva de estoque, nem produção industrial.
-Cada peça é criada artesanalmente e exclusivamente para você, comprador, tornando sua aquisição única no mundo.
+          <p>Cada unidade é produzida exclusivamente em Cuba, sem parcerias externas, sem indústrias estrangeiras, sem concessões. Isso garante não apenas a mais alta qualidade, mas também a impossibilidade de falsificação – pois o Perostino Gois não pode ser fabricado fora da sua terra de origem.</p>
 
+          <p>Dessa forma, a marca não só supera os padrões das casas de charuto mais lendárias, mas também se consolida como símbolo absoluto de autenticidade, exclusividade e excelência.</p>
 
-          <div class="row">
-            <a class="btn whatsapp-btn" data-message="Olá! Quero comprar a Edição Real (1 unidade)." href="#">Comprar agora</a>
-            <a class="btn ghost" href="#produtos">Ver produtos</a>
+          <p><strong>Perostino Gois não é apenas um charuto. É um patrimônio cubano, legítimo e intocável.</strong></p>
+
+          <div class="content-block" style="margin-top:16px">
+            <p><strong>📜 Declaração Exclusiva:</strong> Cada charuto e cada caixa de Perostino Gois são montados, numerados e selados individualmente conforme o pedido de cada cliente. Não existe reserva de estoque, nem produção industrial. Cada peça é criada artesanalmente e exclusivamente para você, comprador, tornando sua aquisição única no mundo.</p>
+          </div>
+
+          <div id="pedido" class="center mt-24">
+            <a class="btn" href="https://wa.me/351914026258" target="_blank" rel="noopener noreferrer">
+              Pedir pelo WhatsApp
+            </a>
           </div>
         </div>
-        <div class="card">
-          <span class="tag">Edição Real, só para a Realeza</span>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;margin-top:12px">
+
+        <!-- RANKING -->
+        <section id="ranking" class="content-block card">
+          <div class="card-header">
             <div>
-              <h4 style="margin:0 0 6px">Notas</h4>
-              <p class="muted" style="margin:0">Torra média, couro, especiarias suaves. Queima uniforme.</p>
-              <div class="row" style="margin-top:12px">
-                <div class="qty">
-                  <label for="hero-qty" class="muted" style="font-size:13px">Qtd.</label>
-                  <input id="hero-qty" type="number" min="1" value="1" />
+              <div class="card-title">Ranking de Compradores</div>
+              <div class="card-sub"> • Edição Limitada</div>
+            </div>
+            <span class="badge">Top Volume</span>
+          </div>
+
+          <div class="ranking-list">
+            <div class="ranking-item">
+              <span class="name">🇵🇹 João Silva</span>
+              <span class="qty">12 caixas</span>
+            </div>
+            <div class="ranking-item">
+              <span class="name">🇧🇷 Ana Martins</span>
+              <span class="qty">9 caixas</span>
+            </div>
+            <div class="ranking-item">
+              <span class="name">🇨🇭 Luca Bernasconi</span>
+              <span class="qty">7 caixas</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRODUTOS -->
+        <section id="produtos" class="content-block">
+          <h2 class="mb-16">Produtos</h2>
+          <div class="grid-2">
+            <!-- Produto 1: Edição Real -->
+            <article class="card" aria-label="Edição Real — Robusto">
+              <img src="assets/edicaoReal.jpg" alt="Edição Real — caixa Perostino Gois" style="width:100%;border-radius:12px;border:1px solid var(--border);margin-bottom:12px;">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Edição Real — Robusto</div>
+                  <div class="card-sub">Fortaleza média • Combustão equilibrada</div>
                 </div>
-                <a class="btn small whatsapp-btn" data-bind-qty="#hero-qty" data-message="Olá! Quero comprar a Edição Real (QTD unidades).">Pedir por WhatsApp</a>
+                <span class="badge">Sob encomenda</span>
               </div>
-            </div>
-            <div class="thumb" style="height:160px">
-              <img src="assets/edicao-real.jpg" alt="Caixa Edição Real Perostino Gois" onerror="this.style.display='none'">
-            </div>
+              <p class="mb-16">Produzido sob demanda em Cuba, numerado e selado individualmente. Blend clássico, puxada cremosa e final persistente.</p>
+              <a class="btn" href="https://wa.me/351964794167?text=Quero%20a%20Edi%C3%A7%C3%A3o%20Real%20Robusto" target="_blank" rel="noopener noreferrer">Pedir no WhatsApp</a>
+            </article>
+
+            <!-- Produto 2: Kit Robusto (Sorteio) -->
+            <article class="card" aria-label="Kit Robusto — Sorteio">
+              <img src="assets/kitRobusto.png" alt="Kit Robusto — Sorteio Perostino Gois" style="width:100%;border-radius:12px;border:1px solid var(--border);margin-bottom:12px;">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Kit Robusto — Sorteio</div>
+                  <div class="card-sub">Participação exclusiva • 10€ por entrada</div>
+                </div>
+                <span class="badge">Promoção</span>
+              </div>
+              <p class="mb-16">Participe do sorteio especial do Kit Robusto. Cada participação custa apenas 10€. Garanta já sua entrada!</p>
+              <a class="btn" href="/sorteio.html">Participar do Sorteio</a>
+            </article>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRODUTOS -->
-    <section id="produtos">
-      <div class="container">
-        <h3 class="section-title">Produtos</h3>
-        <p class="section-sub">Escolha o seu e finalize pelo WhatsApp.</p>
-        <div class="grid cols-3">
-          <!-- Produto 1 -->
-          <article class="card product-card">
-            <div class="product-top">
-              <div class="thumb"><img src="assets/edicaoReal.jpg" alt="Edição Real" onerror="this.style.display='none'"></div>
-              <div>
-                <div class="product-name">Edição Real</div>
-                <div class="muted">Formato Robusto • Fortaleza média</div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="qty">
-                <label class="muted" for="q-real">Qtd.</label>
-                <input id="q-real" type="number" min="1" value="1">
-              </div>
-              <a class="btn small whatsapp-btn" data-bind-qty="#q-real" data-message="Olá! Quero comprar a Edição Real (QTD unidades).">Comprar pelo WhatsApp</a>
-            </div>
-          </article>
-
-          <!-- Produto 2 -->
-          <article class="card product-card">
-            <div class="product-top">
-              <div class="thumb"><img src="assets/kitRobusto.png" alt="Kit Robusto" onerror="this.style.display='none'"></div>
-              <div>
-                <div class="product-name">Kit Robusto</div>
-                <div class="muted">Combo promocional somente por sorteio</div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="qty">
-                <label class="muted" for="q-kit">Qtd.</label>
-                <input id="q-kit" type="number" min="1" value="1">
-              </div>
-              <a class="btn small whatsapp-btn" data-bind-qty="#q-kit" data-message="Olá! Quero 1 Kit Robusto (QTD kits).">Comprar pelo WhatsApp</a>
-            </div>
-          </article>
-
-       
-
-    <!-- PAGAMENTOS -->
-    <section id="pagamentos">
-      <div class="container">
-        <h3 class="section-title">Pagamentos aceitos</h3>
-        <p class="section-sub">Atendimento vip pelo WhatsApp. Também aceitamos Pix, Revolut e Cripto.</p>
-        <div class="pay-list">
-          <div class="pay-item"><span>Revolut (EUR/USD)</span><a class="btn small whatsapp-btn" data-message="Olá! Quero pagar via Revolut. Pode enviar os dados?">Pedir dados no WhatsApp</a></div>
-          <div class="pay-item"><span>Pix (BRL)</span><a class="btn small whatsapp-btn" data-message="Olá! Quero pagar via Pix. Pode enviar a chave e o QR?">Pedir chave Pix</a></div>
-          <div class="pay-item"><span>Cripto: USDT (BEP20), SOL (Solana), BTC</span><a class="btn small whatsapp-btn" data-message="Olá! Quero pagar em cripto (USDT/SOL/BTC). Pode enviar carteira e QR?">Pedir carteira</a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SORTEIO -->
-    <section id="sorteio">
-      <div class="container">
-        <div class="card raffle">
-          <div>
-            <span class="badge">Participação: 10 €</span>
-            <h3 style="margin:10px 0 8px">Sorteio • Kit Robusto</h3>
-            <p class="muted" style="margin:0 0 14px">Entre no sorteio oficial do Kit Robusto. Envie o comprovativo pelo WhatsApp e receba o seu número de participação automaticamente.</p>
-            <div class="row">
-              <a class="btn whatsapp-btn" data-message="Olá! Quero participar do sorteio do Kit Robusto (10 €). Pode enviar as instruções?">Participar agora</a>
-              <a class="btn ghost whatsapp-btn" data-message="Olá! Tenho dúvidas sobre o sorteio do Kit Robusto.">Tirar dúvidas</a>
-            </div>
-          </div>
-          <div>
-            <div class="thumb" style="height:180px"><img src="assets/sorteio.jpg" alt="Sorteio Kit Robusto" onerror="this.style.display='none'"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RANKING – editar números/nomes aqui -->
-<section class="ranking-wrap">
-  <h2 class="ranking-title">Ranking de Compradores</h2>
-
-  <!-- total vendido (em caixas) -->
-  <div class="ranking-total">
-    <span>Total vendido:</span>
-    <strong id="total-caixas">22</strong> caixas
-  </div>
-
-  <!-- lista (ordem decrescente) -->
-  <ol class="ranking-list">
-    <li>
-      <span class="pos">#1</span>
-      <span class="nome">🇵🇹 João Carvalho</span>
-      <span class="qtd"><strong>4</strong> caixas</span>
-    </li>
-    <li>
-      <span class="pos">#2</span>
-      <span class="nome">🇧🇷 Maria Costa</span>
-      <span class="qtd"><strong>2</strong> caixas</span>
-    </li>
-    <li>
-      <span class="pos">#3</span>
-      <span class="nome">🇪🇸 Carlos Ruiz</span>
-      <span class="qtd"><strong>1</strong> caixas</span>
-    </li>
-    <!-- adicione/remova itens conforme precisar -->
-  </ol>
-</section>
-
-
-    <!-- SUPORTE -->
-    <section id="suporte">
-      <div class="container">
-        <h3 class="section-title">Suporte por WhatsApp</h3>
-        <p class="section-sub">Ficou alguma dúvida sobre compra, pagamento ou entrega? Fale connosco.</p>
-        <div class="row">
-          <a class="btn whatsapp-btn" data-message="Olá! Preciso de suporte.">Abrir conversa</a>
-          <a class="btn ghost" href="#">Voltar ao topo</a>
-        </div>
+        </section>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <div>© <span id="year"></span> Perostino Gois. Todos os direitos reservados.</div>
-      <div class="muted">Artesanal • Qualidade • Tradição</div>
-    </div>
+  <!-- Footer fixo -->
+  <footer class="footer-bar">
+    <a href="https://wa.me/351964794167" target="_blank" class="footer-btn" rel="noopener noreferrer">WhatsApp</a>
+    <a href="https://instagram.com/seu_instagram" target="_blank" class="footer-btn" rel="noopener noreferrer">Instagram</a>
+    <a href="https://facebook.com/sua_pagina" target="_blank" class="footer-btn" rel="noopener noreferrer">Facebook</a>
   </footer>
-
-  <!-- Floating WhatsApp -->
-  <div class="wa-float">
-    <a class="wa-circle whatsapp-btn" aria-label="Falar no WhatsApp" data-message="Olá! Vim pelo site e quero informações.">WA</a>
-  </div>
-
-  <script>
-    // CONFIGURE AQUI O NÚMERO DO WHATSAPP (COM CÓDIGO DO PAÍS)
-    // Exemplo Portugal: 351XXXXXXXXX | Brasil: 55XXXXXXXXXXX
-    const WHATSAPP_NUMBER = "964794167"; // TODO: Substitua pelo número real (apenas dígitos)
-
-    function buildWaLink(msg){
-      const text = encodeURIComponent(msg);
-      return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
-    }
-
-    function bindWhatsAppButtons(){
-      document.querySelectorAll('.whatsapp-btn').forEach(btn=>{
-        const baseMsg = btn.getAttribute('data-message') || 'Olá! Vim pelo site e quero mais informações.';
-        const qtySelector = btn.getAttribute('data-bind-qty');
-        let msg = baseMsg;
-        if(qtySelector){
-          const el = document.querySelector(qtySelector);
-          const q = Math.max(1, parseInt(el?.value || '1', 10));
-          msg = baseMsg.replace('QTD', q);
-          el?.addEventListener('change', ()=>{
-            btn.href = buildWaLink(baseMsg.replace('QTD', Math.max(1, parseInt(el.value||'1',10))));
-          });
-        }
-        btn.href = buildWaLink(msg);
-        btn.setAttribute('target','_blank');
-        btn.setAttribute('rel','noopener');
-      });
-    }
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-    bindWhatsAppButtons();
-  </script>
 </body>
 </html>
